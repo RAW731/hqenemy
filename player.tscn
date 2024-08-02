@@ -1,0 +1,379 @@
+[gd_scene load_steps=40 format=3 uid="uid://3reucei7bqao"]
+
+[ext_resource type="Script" path="res://playerr.gd" id="1_tfg8s"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_dlo4d"]
+[ext_resource type="ArrayMesh" uid="uid://djj8fjbey3q7g" path="res://Katana Sword/model.obj" id="3_d5qmk"]
+[ext_resource type="Texture2D" uid="uid://d4donr72ssyoa" path="res://icon.svg" id="7_s840j"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ld2t"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7ch00"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5e04t"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_fbf2o"]
+shading_mode = 0
+diffuse_mode = 3
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_2ungk"]
+albedo_color = Color(0.873732, 0.873732, 0.873732, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bn56t"]
+material = SubResource("ORMMaterial3D_2ungk")
+radius = 0.084
+height = 0.321
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_pbbfu"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_8fjll"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vcsma"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_6mevh"]
+shading_mode = 0
+specular_mode = 1
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_ns6rc"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7w8dg"]
+radius = 1.07
+height = 2.14
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_c2plg"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_fiix0"]
+shading_mode = 0
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_peh2w"]
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(1, 0.734727, 0.508886, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_tic8v"]
+shading_mode = 0
+
+[sub_resource type="Animation" id="Animation_jjliq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/right hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.417, 0.337, 0.622)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body/right hand:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("body/left hand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.38468, 0.337147, 0.621619)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kuu8v"]
+resource_name = "attack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/right hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.417, 0.337, 0.622), Vector3(-0.331773, 0.337, 1.14228), Vector3(-0.417, 0.337, 0.6), Vector3(-0.22925, 0.337, 0.800332)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/right hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.29423, 0.278703, 0.222422), Vector3(0, 0, 0), Vector3(0.973703, 0.134006, 0.0648278)]
+}
+
+[sub_resource type="Animation" id="Animation_jkwe6"]
+resource_name = "attack2"
+
+[sub_resource type="Animation" id="Animation_v1w68"]
+resource_name = "dead"
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.194, 0.391, 0.482, 0.588, 0.672, 0.742, 0.877, 0.958),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_473bl"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.07, 0), Vector3(0, 0.101999, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s4n2i"]
+resource_name = "jump"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/right hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.417, 0.337, 0.622), Vector3(-0.721565, 0.859176, 0.0596088), Vector3(-0.721565, 0.153304, 0.0596088), Vector3(-0.417, 0.337, 0.622)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/left hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.38468, 0.337147, 0.621619), Vector3(0.667098, 0.859, 0.06), Vector3(0.667, 0.153, 0.06), Vector3(0.38468, 0.337147, 0.621619)]
+}
+
+[sub_resource type="Animation" id="Animation_66oa1"]
+resource_name = "walk"
+length = 0.7
+loop_mode = 1
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.005, 0.52, 2.049),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.161809, 0), Vector3(0, 0.467345, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yppdv"]
+_data = {
+"RESET": SubResource("Animation_jjliq"),
+"attack": SubResource("Animation_kuu8v"),
+"attack2": SubResource("Animation_jkwe6"),
+"dead": SubResource("Animation_v1w68"),
+"idle": SubResource("Animation_473bl"),
+"jump": SubResource("Animation_s4n2i"),
+"walk": SubResource("Animation_66oa1")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t0ys6"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2qg0t"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rxc8i"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_111lo"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hlpqj"]
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f6sji"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c2ouv"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ark81"]
+priority = 0
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8r158"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_stfbe"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_voy8r"]
+states/Start/position = Vector2(189.716, 100.267)
+states/attack/node = SubResource("AnimationNodeAnimation_t0ys6")
+states/attack/position = Vector2(419.489, -18.5092)
+states/idle/node = SubResource("AnimationNodeAnimation_2qg0t")
+states/idle/position = Vector2(320.924, 99.9128)
+states/walk/node = SubResource("AnimationNodeAnimation_rxc8i")
+states/walk/position = Vector2(534.972, 99.7873)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_111lo"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_hlpqj"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_f6sji"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_c2ouv"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_ark81"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_8r158"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_stfbe")]
+graph_offset = Vector2(-52.8734, -77.7895)
+
+[node name="player" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+platform_floor_layers = 2147483647
+script = ExtResource("1_tfg8s")
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("2_dlo4d")]
+offset_left = -219.0
+offset_top = -652.0
+offset_right = 389.0
+offset_bottom = -14.0
+scale = Vector2(1.4, 1.4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0ld2t")
+
+[node name="body" type="MeshInstance3D" parent="."]
+material_override = SubResource("ORMMaterial3D_7ch00")
+mesh = SubResource("CapsuleMesh_5e04t")
+
+[node name="eye" type="MeshInstance3D" parent="body"]
+transform = Transform3D(1, 1.28555e-08, 9.50365e-10, -1.28555e-08, 0.989129, 0.14705, 9.50365e-10, -0.14705, 0.989129, 0.209, 0.557, 0.416)
+material_override = SubResource("ORMMaterial3D_fbf2o")
+mesh = SubResource("CapsuleMesh_bn56t")
+surface_material_override/0 = SubResource("ORMMaterial3D_pbbfu")
+
+[node name="inside eye" type="MeshInstance3D" parent="body/eye"]
+transform = Transform3D(0.1, -1.11022e-16, 0, 0, 0.1, 9.31323e-10, -8.88178e-16, -9.31323e-10, 0.1, -1.49012e-08, 0, 0.0459331)
+material_override = SubResource("ORMMaterial3D_8fjll")
+mesh = SubResource("CapsuleMesh_vcsma")
+
+[node name="eye2" type="MeshInstance3D" parent="body"]
+transform = Transform3D(1, 1.28555e-08, 9.50365e-10, -1.28555e-08, 0.989129, 0.14705, 9.50365e-10, -0.14705, 0.989129, -0.20898, 0.55715, 0.415666)
+material_override = SubResource("ORMMaterial3D_6mevh")
+mesh = SubResource("CapsuleMesh_bn56t")
+
+[node name="inside eye" type="MeshInstance3D" parent="body/eye2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 7.45058e-09, 0, 0.0459331)
+material_override = SubResource("ORMMaterial3D_ns6rc")
+mesh = SubResource("CapsuleMesh_vcsma")
+
+[node name="right hand" type="MeshInstance3D" parent="body"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.417, 0.337, 0.622)
+mesh = SubResource("CapsuleMesh_7w8dg")
+
+[node name="sword" type="MeshInstance3D" parent="body/right hand"]
+transform = Transform3D(-2.35623, 1.51267, -6.9751e-06, 1.48637, 2.31526, -0.519869, -0.280848, -0.437479, -2.75132, -0.0234261, 0.66381, -0.0100174)
+layers = 524288
+mesh = ExtResource("3_d5qmk")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ORMMaterial3D_c2plg")
+surface_material_override/1 = SubResource("ORMMaterial3D_fiix0")
+surface_material_override/2 = SubResource("ORMMaterial3D_peh2w")
+surface_material_override/3 = SubResource("ORMMaterial3D_tic8v")
+
+[node name="left hand" type="MeshInstance3D" parent="body"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.38468, 0.337147, 0.621619)
+mesh = SubResource("CapsuleMesh_7w8dg")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(1583, 746)
+scale = Vector2(1.96094, 1.57812)
+texture_normal = ExtResource("7_s840j")
+action = "jump"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(1573, 343)
+scale = Vector2(1.96094, 1.57812)
+texture_normal = ExtResource("7_s840j")
+action = "Attackk"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+libraries = {
+"": SubResource("AnimationLibrary_yppdv")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+reset_on_save = false
+tree_root = SubResource("AnimationNodeStateMachine_voy8r")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/attack = false
+parameters/conditions/idle = false
+parameters/conditions/walk = false
+
+[node name="LookAt" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.646458, 0)
